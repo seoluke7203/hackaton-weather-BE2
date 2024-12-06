@@ -23,9 +23,9 @@ public class ProductService {
         }
         return productDtos;
     }
-    public Product findById(Integer id) {
-        return productRepository.findById(id).orElseThrow(() -> new RuntimeException("USER NOT FOUND"));
-
+    public ProductDto findById(Integer id) {
+        Product findProduct = productRepository.findById(id).orElseThrow(() -> new RuntimeException("Product NOT FOUND"));
+        return ProductDto.from(findProduct);
     }
 
 }

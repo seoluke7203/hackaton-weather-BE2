@@ -30,7 +30,7 @@ public class CartController {
     @Autowired
     private final CartService cartService;
 
-    @PostMapping("/example")
+    @PostMapping("/add")
     public ResponseEntity<String> addProductToCart(@RequestBody ProductRequestDto request) {
         cartService.addProductByProductId(request.getId(), request.getSize());
         return ResponseEntity.status(HttpStatus.OK).body(request.getId() + "번 추가");

@@ -5,9 +5,11 @@ import asac06.hackathon.weather.dto.ProductDto;
 import asac06.hackathon.weather.service.ProductService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,4 +27,10 @@ public class ProductController {
             .status(HttpStatus.OK)
             .body(productDtos);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ProductDto> findProductById(@PathVariable("id") Integer id) {
+        return ResponseEntity.status(HttpStatus.OK).body(productService.findById(id));
+    }
+
 }
