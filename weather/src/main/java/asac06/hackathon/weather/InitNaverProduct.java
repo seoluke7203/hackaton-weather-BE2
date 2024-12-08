@@ -57,8 +57,8 @@ public class InitNaverProduct {
         }
 
         public String naverShopSearch(String query) {
-            String clientId = "8H5A2HQSDL3Z8kXTJvzX"; //애플리케이션 클라이언트 아이디
-            String clientSecret = "1dUo_1AtBi"; //애플리케이션 클라이언트 시크릿
+            String clientId = "algs6rvsCIALuPoEffAL"; //애플리케이션 클라이언트 아이디
+            String clientSecret = "Vz1txXsO9D"; //애플리케이션 클라이언트 시크릿
 
             StringBuilder resultStringBuilder = new StringBuilder();
 

@@ -17,7 +17,9 @@ public class CartDto {
     private String name;
     private String img;
     private Integer price;
+    private Integer count;
     private Size size;
+
 
     public static CartDto from(Cart entity) {
         Product findProduct = entity.getProduct();
@@ -26,7 +28,9 @@ public class CartDto {
             findProduct.getName(),
             findProduct.getImg(),
             findProduct.getPrice(),
+            entity.getCount(),
             entity.getSize()
+
         );
     }
 }
